@@ -1,0 +1,237 @@
+:root{
+    --outerSpace: #2c3338;
+    --shuttleGrey: #606468;
+    --gallery: #eee;
+    --athensGrey: #f8f9fa;
+    --sanMarino: #3f51b5;
+    --hummingBird: #ddf1fa;
+    --blizzardBlue: #9fd8f1;
+}
+
+body {
+	background-color: var(--athensGrey);
+}
+
+.title {
+    font-size: 1.4em;
+    margin-bottom: 24px;
+}
+
+.login-container {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+	height: 100vh;
+	width: 100vw;
+}
+
+.hidden {
+	display: none;
+}
+
+input {
+	border: 0;
+	color: inherit;
+	font: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.form.login {
+	max-width: 30em;
+	width: 80%;
+}
+
+.login .label.label--icon {
+	background-color: var(--gallery);
+}
+
+.login .label.label--icon,
+.login input[type='text'],
+.login input[type='password'],
+.login input[type='submit'] {
+	padding: 1rem;
+}
+
+.form__input-wrapper {
+	width: 100%;
+	position: relative;
+}
+
+.login input[type='password'],
+.login input[type='text'] {
+	border-bottom: 2px solid var(--hummingBird);
+	position: relative;
+}
+
+.login input[type='password']:focus + .underline-wrapper > .underline,
+.login input[type='text']:focus + .underline-wrapper > .underline {
+	transform: scale(1);
+}
+
+.underline-wrapper {
+	position: relative;
+}
+
+.underline {
+	background-color: var(--blizzardBlue);
+	display: inline-block;
+	height: 2px;
+	margin-top: -2px;
+	position: absolute;
+	transform: scale(0, 1);
+	transition: all 0.2s linear;
+	width: 100%;
+}
+
+.login-btn{
+	background-color: var(--hummingBird);
+	color: var(--outerSpace);
+	cursor: pointer;
+    border: none;
+    width: 100%;
+    height: 56px;
+    transition: all 0.3s ease-in-out;
+    margin: 0.875rem;
+}
+
+.login-btn:focus,
+.login-btn:hover {
+	background-color: var(--blizzardBlue);
+	color: var(--gallery);
+}
+
+.form__field,
+.forgot-password {
+	margin: 0.875rem;
+}
+
+.form__field--email,
+.form__field--password {
+	display: flex;
+}
+
+.form__input[type='checkbox'] {
+	appearance: none;
+}
+
+.icon {
+	display: inline-block;
+	fill: var(--shuttleGrey);
+	font-size: 1rem;
+	height: 1em;
+	vertical-align: middle;
+	width: 1em;
+}
+
+.form__field--submit {
+	width: 100%;
+}
+
+.login-actions-container {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.form__field--remember-me {
+	order: 1;
+}
+
+.forgot-password {
+	order: 2;
+}
+
+.forgot-password {
+	color: var(--sanMarino);
+	text-decoration: none;
+}
+
+.forgot-password:hover {
+	color: var(---outerSpace);
+	text-decoration: underline;
+}
+
+.cartoon-container {
+	width: 22em;
+	margin-bottom: 2.5em;
+}
+
+
+.label--remember-me {
+	display: flex;
+	position: relative;
+	cursor: pointer;
+	user-select: none;
+}
+
+.label--remember-me input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.checkmark {
+	height: 1.5em;
+	width: 1.5em;
+	background-color: none;
+}
+
+.checkmark:after {
+	content: '';
+	position: absolute;
+	display: none;
+}
+
+.label--remember-me input:checked ~ .checkmark:after {
+	display: block;
+}
+
+.label--remember-me .checkmark:after {
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid var(--outerSpace);
+	border-width: 0 3px 3px 0;
+	transform: rotate(45deg);
+}
+
+.remember-me-text {
+	margin-left: 0.5em;
+}
+
+@media only screen and (min-width: 960px) {
+	body {
+		background-color: white;
+	}
+
+	.overlay {
+		height: 100vh;
+		width: 100vw;
+		max-height: 100vh;
+		max-width: 100vw;
+
+		clip-path: polygon(10% 0%, 70% 0%, 90% 100%, 30% 100%);
+		z-index: -100;
+		background-color: var(--athensGrey);
+		top: 0;
+		position: absolute;
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.form__field--submit {
+		width: 50%;
+	}
+
+	.forgot-password {
+		width: 100%;
+		text-align: right;
+	}
+}
