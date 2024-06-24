@@ -27,10 +27,6 @@ body {
 	width: 100vw;
 }
 
-.hidden {
-	display: none;
-}
-
 input {
 	border: 0;
 	color: inherit;
@@ -51,9 +47,9 @@ input {
 }
 
 .login .label.label--icon,
-.login input[type='text'],
-.login input[type='password'],
-.login input[type='submit'] {
+input,
+input,
+.login-btn{
 	padding: 1rem;
 }
 
@@ -62,14 +58,14 @@ input {
 	position: relative;
 }
 
-.login input[type='password'],
-.login input[type='text'] {
+input,
+input {
 	border-bottom: 2px solid var(--hummingBird);
 	position: relative;
 }
 
-.login input[type='password']:focus + .underline-wrapper > .underline,
-.login input[type='text']:focus + .underline-wrapper > .underline {
+input:focus + .underline-wrapper > .underline,
+input:focus + .underline-wrapper > .underline {
 	transform: scale(1);
 }
 
@@ -105,18 +101,13 @@ input {
 	color: var(--gallery);
 }
 
-.form__field,
-.forgot-password {
+.form__field {
 	margin: 0.875rem;
 }
 
-.form__field--email,
+.form__field--id,
 .form__field--password {
 	display: flex;
-}
-
-.form__input[type='checkbox'] {
-	appearance: none;
 }
 
 .icon {
@@ -128,83 +119,12 @@ input {
 	width: 1em;
 }
 
-.form__field--submit {
-	width: 100%;
-}
-
-.login-actions-container {
-	display: flex;
-	flex-flow: row wrap;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.form__field--remember-me {
-	order: 1;
-}
-
-.forgot-password {
-	order: 2;
-}
-
-.forgot-password {
-	color: var(--sanMarino);
-	text-decoration: none;
-}
-
-.forgot-password:hover {
-	color: var(---outerSpace);
-	text-decoration: underline;
-}
 
 .cartoon-container {
 	width: 22em;
 	margin-bottom: 2.5em;
 }
 
-
-.label--remember-me {
-	display: flex;
-	position: relative;
-	cursor: pointer;
-	user-select: none;
-}
-
-.label--remember-me input {
-	position: absolute;
-	opacity: 0;
-	cursor: pointer;
-}
-
-.checkmark {
-	height: 1.5em;
-	width: 1.5em;
-	background-color: none;
-}
-
-.checkmark:after {
-	content: '';
-	position: absolute;
-	display: none;
-}
-
-.label--remember-me input:checked ~ .checkmark:after {
-	display: block;
-}
-
-.label--remember-me .checkmark:after {
-	left: 9px;
-	top: 5px;
-	width: 5px;
-	height: 10px;
-	border: solid var(--outerSpace);
-	border-width: 0 3px 3px 0;
-	transform: rotate(45deg);
-}
-
-.remember-me-text {
-	margin-left: 0.5em;
-}
 
 @media only screen and (min-width: 960px) {
 	body {
@@ -224,14 +144,5 @@ input {
 		position: absolute;
 		display: inline-block;
 		overflow: hidden;
-	}
-
-	.form__field--submit {
-		width: 50%;
-	}
-
-	.forgot-password {
-		width: 100%;
-		text-align: right;
 	}
 }
