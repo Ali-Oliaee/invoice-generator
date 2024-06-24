@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="stylesheet" href="./styles/produts-list.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon" />
+    <title>سیری |‌ خانه</title>
+  </head>
+  <body onload="fetchProducts()">
+    <header>
+      <div class="container">
+        <div class="logo-container">
+          <a href="/">
+            <img src="./assets/logo.png" alt="logo" class="logo" />
+          </a>
+          <h1 class="title">سامانه صدور فاکتور سیری</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/shopping-card.html">سبدخرید</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="products-list" id="products-list"></section>
+
+    <footer>
+      <p>&copy; تمامی حقوق محفوظ است ۱۴۰۳</p>
+    </footer>
+
+    <script src="./scripts/products.js"></script>
+  </body>
+</html>
