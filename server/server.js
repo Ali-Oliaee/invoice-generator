@@ -279,5 +279,28 @@ app.get("/customer/:id", async (req, res) => {
   }
 })
 
+app.post("/add-product", async (req, res) => {
+  try {
+    const { collections, database } = await db
+
+    const productNmae = req.body.name
+    const productDescription = req.body.description
+    const productPrice = req.body.price
+
+    collections.products.insert({
+      id: String(Math.floor(Math.random() * 1000)),
+      name: productNmae,
+      image: "",
+      price: Number(productPrice),
+      description: productDescription,
+      count: 1,
+    })
+    res.send({ status: 200, message: "added!" })
+  } catch (e) {
+    console.error(e)
+    res.send({ status: 500, message: "Internal Server Error" })
+  }
+})
+
 const PORT = 8000
 app.listen(PORT, (e) => console.log(e ? e : `Server running on port ${PORT}`))

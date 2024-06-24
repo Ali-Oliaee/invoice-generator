@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="/styles/user-form.css" />
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon" />
+    <title>سیری |‌ افزودن کالا</title>
+  </head>
+  <body onload="checkAuth()">
+    <header>
+      <div class="container">
+        <div class="logo-container">
+          <a href="/">
+            <img src="./assets/logo.png" alt="logo" class="logo" />
+          </a>
+          <h1 class="title">سامانه صدور فاکتور سیری</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/shopping-card.html">سبدخرید</a></li>
+            <li><a href="/login.html" onclick="removeToken()">خروج</a></li>
+            <div class="dropdown">
+              <button class="dropbtn">مدیریت</button>
+              <div class="dropdown-content">
+                <a href="/add-user.html">افزودن فرد</a>
+                <a href="/add-product.html">افزودن کالا</a>
+              </div>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <fieldset class="form-design-section-wrapper style-border">
+      <form id="productForm">
+        <legend
+          class="form-design-field form-field-label col-full hidden-title"
+        >
+          مشخصات کالا
+        </legend>
+        <div class="form-design-section-content">
+          <label class="form-design-field form-field-text col-1-3 required">
+            <span class="required"> * </span>
+            <span class="form-label">نام کالا</span>
+            <input
+              class="form-input"
+              maxlength="255"
+              required
+              id="product-name"
+              onkeyup="onSearchCustomer()"
+            />
+          </label>
+          <label class="form-design-field form-field-text col-1-3 required">
+            <span class="required"> * </span>
+            <span class="form-label">توضیحات</span>
+            <input
+              class="form-input"
+              required
+              maxlength="255"
+              id="product-description"
+            />
+          </label>
+          <label class="form-design-field form-field-text col-1-3">
+            <span class="required"> * </span>
+            <span class="form-label">قیمت</span>
+            <input
+              class="form-input"
+              id="product-price"
+              type="number"
+              required
+            />
+          </label>
+        </div>
+        <button type="submit" class="confirm-btn" onclick="addProduct(e)">
+          افزودن
+        </button>
+      </form>
+    </fieldset>
+
+    <footer>
+      <p>&copy; تمامی حقوق محفوظ است ۱۴۰۳</p>
+    </footer>
+
+    <script src="./scripts/add-product.js"></script>
+  </body>
+</html>
