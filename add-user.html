@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="/styles/user-form.css" />
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon" />
+    <title>سیری |‌ افزودن فرد</title>
+  </head>
+  <body onload="checkAuth()">
+    <header>
+      <div class="container">
+        <div class="logo-container">
+          <a href="/">
+            <img src="./assets/logo.png" alt="logo" class="logo" />
+          </a>
+          <h1 class="title">سامانه صدور فاکتور سیری</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/shopping-card.html">سبدخرید</a></li>
+            <li><a href="/login.html" onclick="removeToken()">خروج</a></li>
+            <div class="dropdown">
+              <button class="dropbtn">مدیریت</button>
+              <div class="dropdown-content">
+                <a href="/add-user.html">افزودن فرد</a>
+                <a href="/add-product.html">افزودن کالا</a>
+              </div>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <fieldset class="form-design-section-wrapper style-border">
+      <form id="userForm">
+        <legend
+          class="form-design-field form-field-label col-full hidden-title"
+        >
+          مشخصات فرد
+        </legend>
+        <div class="form-design-section-content">
+          <label class="form-design-field form-field-text col-1-3 required">
+            <span class="required"> * </span>
+            <span class="form-label">کدملی</span>
+            <input
+              class="form-input"
+              maxlength="255"
+              id="user-id"
+              onkeyup="onSearchCustomer()"
+            />
+          </label>
+          <label class="form-design-field form-field-text col-1-3 required">
+            <span class="required"> * </span>
+            <span class="form-label">نام فرد</span>
+            <input class="form-input" maxlength="255" id="user-name" />
+          </label>
+          <label class="form-design-field form-field-text col-1-3">
+            <span class="required"> * </span>
+            <span class="form-label">موبایل/ تلفن</span>
+            <input class="form-input" maxlength="255" id="user-phone" />
+          </label>
+          <label class="form-design-field form-field-text col-1-3">
+            <span class="required"> * </span>
+            <span class="form-label">آدرس</span>
+            <textarea
+              class="form-input"
+              maxlength="255"
+              id="user-address"
+            ></textarea>
+          </label>
+        </div>
+        <button class="confirm-btn" type="submit">افزودن</button>
+      </form>
+    </fieldset>
+
+    <footer>
+      <p>&copy; تمامی حقوق محفوظ است ۱۴۰۳</p>
+    </footer>
+    <script src="./scripts/add-user.js"></script>
+  </body>
+</html>

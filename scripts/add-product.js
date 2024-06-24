@@ -1,3 +1,8 @@
+const checkAuth = () => {
+  const isAuth = localStorage.getItem("isAuth")
+  if (isAuth) window.location.replace("/")
+}
+
 document
   .getElementById("productForm")
   .addEventListener("submit", function (event) {

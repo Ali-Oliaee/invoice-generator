@@ -281,7 +281,7 @@ app.get("/customer/:id", async (req, res) => {
 
 app.post("/add-product", async (req, res) => {
   try {
-    const { collections, database } = await db
+    const { collections } = await db
 
     const productNmae = req.body.name
     const productDescription = req.body.description
@@ -296,6 +296,40 @@ app.post("/add-product", async (req, res) => {
       count: 1,
     })
     res.send({ status: 200, message: "added!" })
+  } catch (e) {
+    console.error(e)
+    res.send({ status: 500, message: "Internal Server Error" })
+  }
+})
+
+app.post("/add-user", async (req, res) => {
+  try {
+    const { collections } = await db
+
+    const userId = req.body.id
+    const username = req.body.name
+    const userPhone = req.body.phone
+    const userAddress = req.body.address
+
+    const userStatus = await collections.customers
+      .findOne({
+        selector: {
+          id: userId,
+        },
+      })
+      .exec()
+
+    if (!userStatus) {
+      collections.customers.insert({
+        id: userId,
+        name: username,
+        phone: userPhone,
+        address: userAddress,
+      })
+      res.send({ status: 200, message: "added!" })
+    } else {
+      res.send({ status: 400, message: "user exist!" })
+    }
   } catch (e) {
     console.error(e)
     res.send({ status: 500, message: "Internal Server Error" })
