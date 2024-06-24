@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/factor.css" />
+    <link rel="stylesheet" href="./styles/shopping-card.css" />
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon" />
+    <title>سیری |‌ فاکتور</title>
+  </head>
+  <body onload="fetchProducts()">
+    <header>
+      <div class="container">
+        <div class="logo-container">
+          <a href="/">
+            <img src="./assets/logo.png" alt="logo" class="logo" />
+          </a>
+          <h1 class="title">سامانه صدور فاکتور سیری</h1>
+        </div>
+      </div>
+    </header>
+
+    <main class="form-container">
+      <section class="form-title-container">
+        <h1 class="form-title">صدور فاکتور</h1>
+        <h2 class="form-subtitle">ساخت و صدور فاکتور فروش بصورت آنلاین</h2>
+      </section>
+
+      <form class="form-design-page-content">
+        <fieldset class="form-design-section-wrapper style-border">
+          <legend
+            class="form-design-field form-field-label col-full hidden-title"
+          >
+            مشخصات فاکتور
+          </legend>
+          <div class="form-design-section-content">
+            <label class="form-design-field form-field-text col-1-5">
+              <span class="required"> * </span>
+              <span class="form-label">شماره فاکتور</span>
+              <input
+                class="form-input"
+                maxlength="255"
+                placeholder=""
+                id="factor-id"
+              />
+            </label>
+            <label class="form-design-field form-field-date col-1-5">
+              <span class="required"> * </span>
+              <span class="form-label">تاریخ ثبت</span>
+              <input class="form-input" id="created-date" />
+            </label>
+            <label class="form-design-field form-field-date col-1-5">
+              <span class="required"> * </span>
+              <span class="form-label">تاریخ سررسید</span>
+              <input class="form-input" />
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-design-section-wrapper style-border">
+          <legend
+            class="form-design-field form-field-label col-full hidden-title"
+          >
+            مشخصات مشتری
+          </legend>
+          <div class="form-design-section-content">
+            <label class="form-design-field form-field-text col-1-3 required">
+              <span class="required"> * </span>
+              <span class="form-label">کدملی</span>
+              <input
+                class="form-input"
+                maxlength="255"
+                id="customer-id"
+                onkeyup="onSearchCustomer()"
+              />
+            </label>
+            <label class="form-design-field form-field-text col-1-3 required">
+              <span class="required"> * </span>
+              <span class="form-label">نام خریدار</span>
+              <input class="form-input" maxlength="255" id="customer-name" />
+            </label>
+            <label class="form-design-field form-field-text col-1-3">
+              <span class="required"> * </span>
+              <span class="form-label">موبایل/ تلفن</span>
+              <input class="form-input" maxlength="255" id="customer-phone" />
+            </label>
+            <label class="form-design-field form-field-text col-1-3">
+              <span class="required"> * </span>
+              <span class="form-label">آدرس</span>
+              <textarea
+                class="form-input"
+                maxlength="255"
+                id="customer-address"
+              ></textarea>
+            </label>
+          </div>
+        </fieldset>
+      </form>
+
+      <div id="products-list"></div>
+      <span id="total-price"></span>
+      <button class="btn" onclick="generateFactor()">صدور فاکتور</button>
+    </main>
+
+    <footer>
+      <p>&copy; تمامی حقوق محفوظ است ۱۴۰۳</p>
+    </footer>
+
+    <script src="./scripts/factor.js"></script>
+  </body>
+</html>

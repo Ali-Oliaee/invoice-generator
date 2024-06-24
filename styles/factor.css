@@ -1,0 +1,99 @@
+.form-container {
+    background-color: rgb(255, 255, 255);
+    flex: 1;
+    margin: 20px;
+}
+
+.form-title-container {
+    margin-top: 16px;
+}
+
+.form-title {
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.form-subtitle {
+    text-align: center;
+    color: rgb(153, 153, 153);
+    font-weight: normal;
+    font-style: unset;
+    font-size: 0.9em;
+}
+
+.form-input {
+    width: 300px;
+    font-size: 11px;
+    color: rgb(0, 0, 0);
+    border-color: rgb(225, 225, 225);
+    font-weight: normal;
+    font-style: unset;
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0px;
+}
+
+.form-label {
+    font-size: 11px;
+    color: rgb(0, 0, 0);
+    font-weight: normal;
+    font-style: unset;
+}
+
+
+.form-field-label .content div {
+    font-size: medium;
+}
+
+.form-design-section-wrapper.style-border {
+    background-color: rgb(245, 245, 245);
+    border-width: 1px;
+    border-color: rgb(225, 225, 225);
+    border-style: solid;
+}
+
+.form-field-text,
+.form-field-date,
+.form-field-label {
+    display: inline-block;
+}
+
+.col-1-5 {
+    width: 20%;
+}
+
+.col-1-3 {
+    width: 33.33%;
+}
+
+.col-full {
+    width: 100%;
+}
+
+.required {
+    color: red;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin: 5px 0;
+}
+
+.ravesh-editor-html {
+    direction: rtl;
+}
+
+@media screen and (max-width: 768px) {
+    .col-1-5,
+    .col-1-3,
+    .col-full {
+        width: 100%;
+    }
+}

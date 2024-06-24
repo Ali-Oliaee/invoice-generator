@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سیری |‌ سبد خرید</title>
+    <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="stylesheet" href="./styles/shopping-card.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon" />
+    <title>سیری |‌ سبدخرید</title>
+  </head>
+  <body onload="fetchProducts()">
+    <header>
+      <div class="container">
+        <div class="logo-container">
+          <a href="/">
+            <img src="./assets/logo.png" alt="logo" class="logo" />
+          </a>
+          <h1 class="title">سامانه صدور فاکتور سیری</h1>
+        </div>
+      </div>
+    </header>
+
+    <section class="shopping-card-page">
+      <div id="products-list"></div>
+
+      <h4 id="total-price">جمع کل: ۰ تومان</h4>
+      <button href="/factor.html" class="btn" onclick="redirectToFactor()">
+
+        نهایی کردن خرید
+      </button>
+      </button>
+    </section>
+
+    <footer>
+      <p>&copy; تمامی حقوق محفوظ است ۱۴۰۳</p>
+    </footer>
+
+    <script src="./scripts/shopping-card.js"></script>
+  </body>
+</html>
