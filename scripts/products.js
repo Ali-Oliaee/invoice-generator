@@ -41,3 +41,7 @@ const fetchProducts = async () => {
     .then((response) => response.json())
     .then((data) => renderProducts(data))
 }
+
+const removeToken = () => {
+  localStorage.clear()
+}
