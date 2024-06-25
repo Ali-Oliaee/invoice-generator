@@ -70,8 +70,8 @@ const onSearchCustomer = () => {
   const customerAddressInput = document.getElementById("customer-address")
   const customerId = document.getElementById("customer-id").value
 
-  if (customerId)
-    fetch(`http://127.0.0.1:8000/customer/${customerId}`, {
+  if (customerId) {
+    fetch(`http://127.0.0.1:8000/user/${customerId}`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -86,4 +86,43 @@ const onSearchCustomer = () => {
           customerAddressInput.value = ""
         }
       })
+  } else {
+    customerNameInput.value = ""
+    customerPhoneInput.value = ""
+    customerAddressInput.value = ""
+  }
 }
+
+const onSearchSeller = () => {
+  const sellerNameInput = document.getElementById("seller-name")
+  const sellerPhoneInput = document.getElementById("seller-phone")
+  const sellerAddressInput = document.getElementById("seller-address")
+  const sellerId = document.getElementById("seller-id").value
+
+  if (sellerId) {
+    fetch(`http://127.0.0.1:8000/user/${sellerId}`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.id) {
+          sellerNameInput.value = data.name
+          sellerPhoneInput.value = data.phone
+          sellerAddressInput.value = data.address
+        } else {
+          sellerNameInput.value = ""
+          sellerPhoneInput.value = ""
+          sellerAddressInput.value = ""
+        }
+      })
+  } else {
+    sellerNameInput.value = ""
+    sellerPhoneInput.value = ""
+    sellerAddressInput.value = ""
+  }
+}
+
+document.getElementById("seller-id").addEventListener("input", onSearchSeller)
+document
+  .getElementById("customer-id")
+  .addEventListener("input", onSearchCustomer)

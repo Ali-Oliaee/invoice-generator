@@ -70,12 +70,7 @@
             <label class="form-design-field form-field-text col-1-3 required">
               <span class="required"> * </span>
               <span class="form-label">کدملی</span>
-              <input
-                class="form-input"
-                maxlength="255"
-                id="customer-id"
-                onkeyup="onSearchCustomer()"
-              />
+              <input class="form-input" maxlength="255" id="customer-id" />
             </label>
             <label class="form-design-field form-field-text col-1-3 required">
               <span class="required"> * </span>
@@ -94,6 +89,40 @@
                 class="form-input"
                 maxlength="255"
                 id="customer-address"
+              ></textarea>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-design-section-wrapper style-border">
+          <legend
+            class="form-design-field form-field-label col-full hidden-title"
+          >
+            مشخصات فروشنده
+          </legend>
+          <div class="form-design-section-content">
+            <label class="form-design-field form-field-text col-1-3 required">
+              <span class="required"> * </span>
+              <span class="form-label">کدملی</span>
+              <input class="form-input" maxlength="255" id="seller-id" />
+            </label>
+            <label class="form-design-field form-field-text col-1-3 required">
+              <span class="required"> * </span>
+              <span class="form-label">نام فروشنده</span>
+              <input class="form-input" maxlength="255" id="seller-name" />
+            </label>
+            <label class="form-design-field form-field-text col-1-3">
+              <span class="required"> * </span>
+              <span class="form-label">موبایل/ تلفن</span>
+              <input class="form-input" maxlength="255" id="seller-phone" />
+            </label>
+            <label class="form-design-field form-field-text col-1-3">
+              <span class="required"> * </span>
+              <span class="form-label">آدرس</span>
+              <textarea
+                class="form-input"
+                maxlength="255"
+                id="seller-address"
               ></textarea>
             </label>
           </div>

@@ -259,19 +259,19 @@ app.post("/generate-factor", async (req, res) => {
   }
 })
 
-app.get("/customer/:id", async (req, res) => {
+app.get("/user/:id", async (req, res) => {
   try {
     const { collections } = await db
-    const customerId = req.params.id
-    const customer = await collections.customers
+    const userId = req.params.id
+    const user = await collections.customers
       .findOne({
         selector: {
-          id: { $regex: `.*${customerId}.*` },
+          id: { $regex: `.*${userId}.*` },
         },
       })
       .exec()
 
-    if (customer) res.send(customer._data)
+    if (user) res.send(user._data)
     else res.send({})
   } catch (e) {
     console.error(e)
