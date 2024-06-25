@@ -26,6 +26,8 @@ document
         if (result.status === 200) {
           localStorage.setItem("isAuth", "true")
           window.location.replace("/")
+        } else {
+          alert("اطلاعات وارد شده صحیح نمی باشد")
         }
       })
       .catch((error) => console.error("Error:", error))
