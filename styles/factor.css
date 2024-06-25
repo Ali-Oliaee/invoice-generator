@@ -86,8 +86,15 @@
     margin: 5px 0;
 }
 
-.ravesh-editor-html {
-    direction: rtl;
+
+
+.discount-input-container{
+margin-block: 12px;
+}
+.discount-input-container input {
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    outline: none;
 }
 
 @media screen and (max-width: 768px) {

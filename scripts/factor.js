@@ -39,8 +39,12 @@ const generateFactor = async () => {
 const renderProducts = (products) => {
   const container = document.getElementById("products-list")
   const totalPriceElement = document.getElementById("total-price")
+  const finalAmountElement = document.getElementById(
+    "total-price-after-discount"
+  )
   container.innerHTML = ""
   let totalPrice = 0
+  let finalPrice = 0
   products.map((product) => {
     totalPrice += product.price * product.count
     const productTemplate = `
@@ -54,6 +58,27 @@ const renderProducts = (products) => {
     container.innerHTML = productTemplate + container.innerHTML
   })
   totalPriceElement.innerHTML = `جمع کل: ${totalPrice} تومان`
+  finalAmountElement.innerHTML = `مبلغ نهایی : ${finalPrice} تومان`
+}
+
+const calculateDiscount = () => {
+  const totalPriceElement = document.getElementById("total-price")
+  const finalAmountElement = document.getElementById(
+    "total-price-after-discount"
+  )
+  const totalPriceAnount = totalPriceElement.innerHTML.match(/\d+/)[0]
+  const discountValue = document.getElementById("discount-input").value
+  if (discountValue) {
+    const res = Math.abs(
+      (parseInt(discountValue) * totalPriceAnount) / 100 - totalPriceAnount
+    ).toFixed(3)
+    finalAmountElement.innerHTML = `مبلغ نهایی:‌${res} تومان`
+  } else {
+    finalAmountElement.innerHTML = totalPriceElement.innerHTML.replace(
+      "جمع کل",
+      "مبلغ نهایی"
+    )
+  }
 }
 
 const fetchProducts = async () => {
@@ -126,6 +151,9 @@ document.getElementById("seller-id").addEventListener("input", onSearchSeller)
 document
   .getElementById("customer-id")
   .addEventListener("input", onSearchCustomer)
+document
+  .getElementById("discount-input")
+  .addEventListener("input", calculateDiscount)
 document
   .getElementById("factorForm")
   .addEventListener("submit", function (event) {

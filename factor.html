@@ -161,6 +161,16 @@
 
         <div id="products-list"></div>
         <span id="total-price"></span>
+        <div class="discount-input-container">
+          <input
+            type="number"
+            id="discount-input"
+            max="100"
+            maxlength="3"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          />% تخفیف
+        </div>
+        <div id="total-price-after-discount"></div>
         <button class="btn" type="submit">صدور فاکتور</button>
       </form>
     </main>
