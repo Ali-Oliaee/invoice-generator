@@ -8,31 +8,27 @@ const setFactorInfo = () => {
 setFactorInfo()
 
 const generateFactor = async () => {
-  const customerName = document.getElementById("customer-name").value
-  const customerPhone = document.getElementById("customer-phone").value
-  const customerAddress = document.getElementById("customer-address").value
-  const data = {
-    name: customerName,
-    phone: customerPhone,
-    address: customerAddress,
-  }
+  const { jsPDF } = window.jspdf
 
-  await fetch("http://127.0.0.1:8000/generate-factor/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  }).then(async (response) => {
-    const blob = await response.blob()
-    const url = window.URL.createObjectURL(blob)
-    const a = document.createElement("a")
-    a.href = url
-    a.download = "factor.pdf"
-    document.body.appendChild(a)
-    a.click()
-    a.remove()
-    window.URL.revokeObjectURL(url)
+  html2canvas(document.querySelector("body")).then((canvas) => {
+    const imgData = canvas.toDataURL("image/png")
+    const pdf = new jsPDF("p", "pt", "a4")
+    const imgProps = pdf.getImageProperties(imgData)
+    const pdfWidth = pdf.internal.pageSize.getWidth()
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width
+
+    pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight)
+
+    if (pdfHeight > pdf.internal.pageSize.getHeight()) {
+      let yOffset = pdf.internal.pageSize.getHeight()
+      while (yOffset < pdfHeight) {
+        pdf.addPage()
+        pdf.addImage(imgData, "PNG", 0, -yOffset, pdfWidth, pdfHeight)
+        yOffset += pdf.internal.pageSize.getHeight()
+      }
+    }
+
+    pdf.save("invoice.pdf")
   })
 }
 
