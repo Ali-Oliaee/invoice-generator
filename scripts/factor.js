@@ -7,7 +7,7 @@ const setFactorInfo = () => {
 
 setFactorInfo()
 
-const generateFactor = async (customer) => {
+const generateFactor = async () => {
   const customerName = document.getElementById("customer-name").value
   const customerPhone = document.getElementById("customer-phone").value
   const customerAddress = document.getElementById("customer-address").value
@@ -126,3 +126,9 @@ document.getElementById("seller-id").addEventListener("input", onSearchSeller)
 document
   .getElementById("customer-id")
   .addEventListener("input", onSearchCustomer)
+document
+  .getElementById("factorForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault()
+    generateFactor()
+  })

@@ -29,7 +29,7 @@
         <h2 class="form-subtitle">ساخت و صدور فاکتور فروش بصورت آنلاین</h2>
       </section>
 
-      <form class="form-design-page-content">
+      <form class="form-design-page-content" id="factorForm">
         <fieldset class="form-design-section-wrapper style-border">
           <legend
             class="form-design-field form-field-label col-full hidden-title"
@@ -41,6 +41,7 @@
               <span class="required"> * </span>
               <span class="form-label">شماره فاکتور</span>
               <input
+                required
                 class="form-input"
                 maxlength="255"
                 placeholder=""
@@ -50,12 +51,12 @@
             <label class="form-design-field form-field-date col-1-5">
               <span class="required"> * </span>
               <span class="form-label">تاریخ ثبت</span>
-              <input class="form-input" id="created-date" />
+              <input required class="form-input" id="created-date" />
             </label>
             <label class="form-design-field form-field-date col-1-5">
               <span class="required"> * </span>
               <span class="form-label">تاریخ سررسید</span>
-              <input class="form-input" />
+              <input required class="form-input" />
             </label>
           </div>
         </fieldset>
@@ -70,17 +71,32 @@
             <label class="form-design-field form-field-text col-1-3 required">
               <span class="required"> * </span>
               <span class="form-label">کدملی</span>
-              <input class="form-input" maxlength="255" id="customer-id" />
+              <input
+                required
+                class="form-input"
+                maxlength="255"
+                id="customer-id"
+              />
             </label>
             <label class="form-design-field form-field-text col-1-3 required">
               <span class="required"> * </span>
               <span class="form-label">نام خریدار</span>
-              <input class="form-input" maxlength="255" id="customer-name" />
+              <input
+                required
+                class="form-input"
+                maxlength="255"
+                id="customer-name"
+              />
             </label>
             <label class="form-design-field form-field-text col-1-3">
               <span class="required"> * </span>
               <span class="form-label">موبایل/ تلفن</span>
-              <input class="form-input" maxlength="255" id="customer-phone" />
+              <input
+                required
+                class="form-input"
+                maxlength="255"
+                id="customer-phone"
+              />
             </label>
             <label class="form-design-field form-field-text col-1-3">
               <span class="required"> * </span>
@@ -104,17 +120,32 @@
             <label class="form-design-field form-field-text col-1-3 required">
               <span class="required"> * </span>
               <span class="form-label">کدملی</span>
-              <input class="form-input" maxlength="255" id="seller-id" />
+              <input
+                required
+                class="form-input"
+                maxlength="255"
+                id="seller-id"
+              />
             </label>
             <label class="form-design-field form-field-text col-1-3 required">
               <span class="required"> * </span>
               <span class="form-label">نام فروشنده</span>
-              <input class="form-input" maxlength="255" id="seller-name" />
+              <input
+                required
+                class="form-input"
+                maxlength="255"
+                id="seller-name"
+              />
             </label>
             <label class="form-design-field form-field-text col-1-3">
               <span class="required"> * </span>
               <span class="form-label">موبایل/ تلفن</span>
-              <input class="form-input" maxlength="255" id="seller-phone" />
+              <input
+                required
+                class="form-input"
+                maxlength="255"
+                id="seller-phone"
+              />
             </label>
             <label class="form-design-field form-field-text col-1-3">
               <span class="required"> * </span>
@@ -127,11 +158,11 @@
             </label>
           </div>
         </fieldset>
-      </form>
 
-      <div id="products-list"></div>
-      <span id="total-price"></span>
-      <button class="btn" onclick="generateFactor()">صدور فاکتور</button>
+        <div id="products-list"></div>
+        <span id="total-price"></span>
+        <button class="btn" type="submit">صدور فاکتور</button>
+      </form>
     </main>
 
     <footer>
